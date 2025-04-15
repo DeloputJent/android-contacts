@@ -8,16 +8,9 @@ import androidx.recyclerview.widget.DiffUtil;
 
 public class BaseListDiffCallback <Temp extends ListDiffInterface> extends DiffUtil.ItemCallback<Temp> {
 
-
     @Override
     public boolean areItemsTheSame (@NonNull Temp oldItem, @NonNull Temp newItem) {
-        return oldItem.hashCode() == newItem.hashCode();
-    }
-
-   // @Override
-
-    public boolean theSameAs (@NonNull Temp newItem) {
-        return this.hashCode() == newItem.hashCode();
+        return oldItem.theSameAs(newItem);
     }
 
     @Override
